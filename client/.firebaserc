@@ -1,5 +1,8 @@
 {
-  "projects": {
-    "default": "plantnet-2fd54"
-  }
+    "projects": {
+        "default": "plantnet-store",
+        "staging": "plantnet-store"
+    },
+    "targets": {},
+    "etags": {}
 }

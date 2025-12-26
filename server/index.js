@@ -15,8 +15,8 @@ const corsOptions = {
     origin: [
         "http://localhost:5173",
         "http://localhost:5174",
-        "https://plantnet-2fd54.web.app",
-        "https://plantnet-2fd54.firebaseapp.com",
+        "https://plantnet-store.web.app",
+        "https://plantnet-store.firebaseapp.com",
     ],
     credentials: true,
     optionSuccessStatus: 200,
