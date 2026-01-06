@@ -1,7 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-    overflow-y: scroll;
+@layer base {
+    html {
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Poppins", sans-serif;
+    }
+}
+
+@layer components {
+    /* Glassmorphism effects */
+    .glass {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-dark {
+        background: rgba(20, 83, 45, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Gradient text */
+    .gradient-text {
+        background: linear-gradient(
+            135deg,
+            #22c55e 0%,
+            #84cc16 50%,
+            #16a34a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* Gradient backgrounds */
+    .gradient-plant {
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    }
+
+    .gradient-leaf {
+        background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+    }
+
+    .gradient-forest {
+        background: linear-gradient(180deg, #14532d 0%, #052e16 100%);
+    }
+
+    /* Hover effects */
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 40px rgba(34, 197, 94, 0.2);
+    }
+
+    /* Button styles */
+    .btn-plant {
+        @apply px-6 py-2.5 rounded-full font-medium transition-all duration-300;
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    }
+
+    .btn-plant:hover {
+        box-shadow: 0 6px 25px rgba(34, 197, 94, 0.4);
+        transform: translateY(-1px);
+    }
+
+    /* Link underline animation */
+    .link-underline {
+        position: relative;
+    }
+
+    .link-underline::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #22c55e, #84cc16);
+        transition: width 0.3s ease;
+    }
+
+    .link-underline:hover::after {
+        width: 100%;
+    }
+}
+
+@layer utilities {
+    /* Custom scrollbar */
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: #f0fdf4;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #22c55e, #16a34a);
+        border-radius: 3px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #16a34a, #15803d);
+    }
 }
