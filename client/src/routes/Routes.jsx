@@ -4,6 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import PlantDetails from "../pages/PlantDetails/PlantDetails";
+import About from "../pages/About/About";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layouts/DashboardLayout";
 import AddPlant from "../pages/Dashboard/Seller/AddPlant";
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
             {
                 path: "/plant/:id",
                 element: <PlantDetails />,
+            },
+            {
+                path: "/about",
+                element: <About />,
             },
         ],
     },
