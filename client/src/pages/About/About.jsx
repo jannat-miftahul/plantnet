@@ -208,6 +208,15 @@ const About = () => {
         },
     ];
 
+    const milestones = [
+        { year: "2020", event: "PlantNet was born in a tiny apartment 🌱" },
+        { year: "2021", event: "Reached 1,000 happy plant parents! 🎉" },
+        { year: "2022", event: "Launched same-day delivery 🚀" },
+        { year: "2023", event: "Planted 10,000 trees worldwide 🌍" },
+        { year: "2024", event: "Opened our first greenhouse showroom 🏡" },
+        { year: "2025", event: "You're here! Let's grow together 💚" },
+    ];
+
     return (
         <div className="min-h-screen bg-gradient-to-b from-plant-50 via-white to-plant-50/30">
             <Helmet>
@@ -293,6 +302,103 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Section */}
+            <section className="py-16 bg-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(34,197,94,0.1),transparent_50%)]" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div className="text-center group">
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-plant-100 flex items-center justify-center text-plant-600 group-hover:scale-110 transition-transform duration-300">
+                                <FiPackage className="w-8 h-8" />
+                            </div>
+                            <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                                {plantsCount}+
+                            </div>
+                            <p className="text-gray-500 text-sm">
+                                Plant Varieties
+                            </p>
+                        </div>
+                        <div className="text-center group">
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform duration-300">
+                                <FiUsers className="w-8 h-8" />
+                            </div>
+                            <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                                {customersCount.toLocaleString()}+
+                            </div>
+                            <p className="text-gray-500 text-sm">
+                                Happy Customers
+                            </p>
+                        </div>
+                        <div className="text-center group">
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-sky-100 flex items-center justify-center text-sky-600 group-hover:scale-110 transition-transform duration-300">
+                                <FiSmile className="w-8 h-8" />
+                            </div>
+                            <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                                {ordersCount.toLocaleString()}+
+                            </div>
+                            <p className="text-gray-500 text-sm">
+                                Plants Delivered
+                            </p>
+                        </div>
+                        <div className="text-center group">
+                            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 group-hover:scale-110 transition-transform duration-300">
+                                <FiAward className="w-8 h-8" />
+                            </div>
+                            <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                                4.9
+                            </div>
+                            <p className="text-gray-500 text-sm flex items-center justify-center gap-1">
+                                <FiStar className="w-3 h-3 text-amber-400 fill-amber-400" />
+                                Customer Rating
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Values */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <span className="text-plant-600 font-semibold text-sm uppercase tracking-wider">
+                            What We Believe In
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                            Our Core Values 💪
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            These aren&apos;t just words on a wall—they&apos;re
+                            the principles that guide everything we do, from
+                            seed to shipment.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {values.map((value, index) => {
+                            const Icon = value.icon;
+                            return (
+                                <div
+                                    key={index}
+                                    className={`${value.bgColor} rounded-3xl p-6 hover-lift cursor-default group`}
+                                >
+                                    <div
+                                        className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${value.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300`}
+                                    >
+                                        <Icon className="w-7 h-7" />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                                        {value.title}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                        {value.description}
+                                    </p>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
