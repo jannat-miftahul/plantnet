@@ -173,7 +173,7 @@ const Navbar = () => {
                                                         Dashboard
                                                     </Link>
                                                     <Link
-                                                        to="/profile"
+                                                        to="dashboard/profile"
                                                         className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-plant-50 hover:text-plant-700 transition-colors duration-200"
                                                     >
                                                         <FiUser className="w-4 h-4" />
