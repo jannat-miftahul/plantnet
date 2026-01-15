@@ -452,6 +452,87 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Meet the Team */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <span className="text-plant-600 font-semibold text-sm uppercase tracking-wider">
+                            The Plant People
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                            Meet Our Team 👋
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            The amazing humans (and plant lovers) behind
+                            PlantNet
+                        </p>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {team.map((member, index) => (
+                            <div
+                                key={index}
+                                className="bg-white rounded-3xl p-6 text-center hover-lift border border-gray-100 group"
+                            >
+                                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-plant-100 to-leaf-light/20 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-300">
+                                    {member.emoji}
+                                </div>
+                                <h3 className="text-lg font-bold text-gray-900 mb-1">
+                                    {member.name}
+                                </h3>
+                                <p className="text-plant-600 text-sm font-medium mb-3">
+                                    {member.role}
+                                </p>
+                                <p className="text-gray-500 text-sm italic">
+                                    &ldquo;{member.quote}&rdquo;
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-20">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="relative overflow-hidden rounded-3xl gradient-forest p-8 md:p-12 text-center">
+                        {/* Decorative elements */}
+                        <div className="absolute top-4 left-4 text-3xl opacity-20">
+                            🌿
+                        </div>
+                        <div className="absolute bottom-4 right-4 text-3xl opacity-20">
+                            🌱
+                        </div>
+                        <div className="absolute top-1/2 left-8 text-2xl opacity-10">
+                            🍃
+                        </div>
+
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                            Ready to Start Your Plant Journey? 🌿
+                        </h2>
+                        <p className="text-plant-200/80 mb-8 max-w-xl mx-auto">
+                            Join thousands of happy plant parents and bring some
+                            green magic into your life today!
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                to="/shop"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-white text-plant-700 font-semibold hover:bg-plant-50 transition-all duration-300 hover:shadow-xl"
+                            >
+                                Shop Now
+                                <FiArrowRight className="w-4 h-4" />
+                            </Link>
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-white/30 text-white font-medium hover:bg-white/10 transition-all duration-300"
+                            >
+                                Contact Us
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
