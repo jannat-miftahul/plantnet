@@ -402,6 +402,56 @@ const About = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Our Story Timeline */}
+            <section className="py-20 bg-gradient-to-b from-white to-plant-50/50">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <span className="text-plant-600 font-semibold text-sm uppercase tracking-wider">
+                            Our Journey
+                        </span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                            The PlantNet Story 📖
+                        </h2>
+                    </div>
+
+                    <div className="relative">
+                        {/* Timeline line */}
+                        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-plant-300 via-plant-500 to-plant-300" />
+
+                        {milestones.map((milestone, index) => (
+                            <div
+                                key={index}
+                                className={`relative flex items-center gap-8 mb-8 ${
+                                    index % 2 === 0 ? "md:flex-row-reverse" : ""
+                                }`}
+                            >
+                                {/* Content */}
+                                <div
+                                    className={`flex-1 ${
+                                        index % 2 === 0 ? "md:text-right" : ""
+                                    } ml-16 md:ml-0`}
+                                >
+                                    <div className="glass rounded-2xl p-6 inline-block hover-lift">
+                                        <span className="text-plant-600 font-bold text-lg">
+                                            {milestone.year}
+                                        </span>
+                                        <p className="text-gray-700 mt-1">
+                                            {milestone.event}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Dot */}
+                                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-plant-500 border-4 border-white shadow-lg z-10" />
+
+                                {/* Spacer for alternating layout on desktop */}
+                                <div className="hidden md:block flex-1" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
